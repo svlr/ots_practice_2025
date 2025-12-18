@@ -1,0 +1,465 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/legislation-ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/legislation-ontology">
+    <Prefix name="" IRI="http://www.semanticweb.org/legislation-ontology#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>Онтология структуры законодательства: Законы, Статьи, Граждане и базовые связи между ними.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal>Структура законодательства</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>Версия 1.0</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Гражданин"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Закон"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Статья"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#имеетСтатью"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#обязанСоблюдать"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#регулирует"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#регулируется"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#являетсяСтатьейЗакона"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетДатуПринятия"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетИдентификатор"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетНазвание"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетНомерЗакона"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетНомерСтатьи"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетТекстСтатьи"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетФИО"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Гражданин_001"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Статья_001_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Закон_001"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Статья_001_2"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Закон"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#имеетСтатью"/>
+            <Class IRI="#Статья"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Статья"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#являетсяСтатьейЗакона"/>
+            <Class IRI="#Закон"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Гражданин"/>
+        <NamedIndividual IRI="#Гражданин_001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Закон"/>
+        <NamedIndividual IRI="#Закон_001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Статья"/>
+        <NamedIndividual IRI="#Статья_001_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Статья"/>
+        <NamedIndividual IRI="#Статья_001_2"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#обязанСоблюдать"/>
+        <NamedIndividual IRI="#Гражданин_001"/>
+        <NamedIndividual IRI="#Статья_001_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#обязанСоблюдать"/>
+        <NamedIndividual IRI="#Гражданин_001"/>
+        <NamedIndividual IRI="#Статья_001_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#регулируется"/>
+        <NamedIndividual IRI="#Гражданин_001"/>
+        <NamedIndividual IRI="#Закон_001"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#имеетСтатью"/>
+        <NamedIndividual IRI="#Закон_001"/>
+        <NamedIndividual IRI="#Статья_001_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#имеетСтатью"/>
+        <NamedIndividual IRI="#Закон_001"/>
+        <NamedIndividual IRI="#Статья_001_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#регулирует"/>
+        <NamedIndividual IRI="#Закон_001"/>
+        <NamedIndividual IRI="#Гражданин_001"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#являетсяСтатьейЗакона"/>
+        <NamedIndividual IRI="#Статья_001_1"/>
+        <NamedIndividual IRI="#Закон_001"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#являетсяСтатьейЗакона"/>
+        <NamedIndividual IRI="#Статья_001_2"/>
+        <NamedIndividual IRI="#Закон_001"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Гражданин_001"/>
+        <Literal>CIT-001</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетФИО"/>
+        <NamedIndividual IRI="#Гражданин_001"/>
+        <Literal>Иванов Иван Иванович</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетДатуПринятия"/>
+        <NamedIndividual IRI="#Закон_001"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">2024-01-15</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Закон_001"/>
+        <Literal>LAW-001</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетНазвание"/>
+        <NamedIndividual IRI="#Закон_001"/>
+        <Literal>Демо-закон о порядке вещей</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетНомерЗакона"/>
+        <NamedIndividual IRI="#Закон_001"/>
+        <Literal>001-ФЗ</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Статья_001_1"/>
+        <Literal>ART-001-1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетНомерСтатьи"/>
+        <NamedIndividual IRI="#Статья_001_1"/>
+        <Literal>1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетТекстСтатьи"/>
+        <NamedIndividual IRI="#Статья_001_1"/>
+        <Literal>Демо-текст статьи 1.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Статья_001_2"/>
+        <Literal>ART-001-2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетНомерСтатьи"/>
+        <NamedIndividual IRI="#Статья_001_2"/>
+        <Literal>2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетТекстСтатьи"/>
+        <NamedIndividual IRI="#Статья_001_2"/>
+        <Literal>Демо-текст статьи 2.</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#имеетСтатью"/>
+        <ObjectProperty IRI="#являетсяСтатьейЗакона"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#регулирует"/>
+        <ObjectProperty IRI="#регулируется"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#имеетСтатью"/>
+        <Class IRI="#Закон"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#обязанСоблюдать"/>
+        <Class IRI="#Гражданин"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#регулирует"/>
+        <Class IRI="#Закон"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#регулируется"/>
+        <Class IRI="#Гражданин"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#являетсяСтатьейЗакона"/>
+        <Class IRI="#Статья"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#имеетСтатью"/>
+        <Class IRI="#Статья"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#обязанСоблюдать"/>
+        <Class IRI="#Статья"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#регулирует"/>
+        <Class IRI="#Гражданин"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#регулируется"/>
+        <Class IRI="#Закон"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#являетсяСтатьейЗакона"/>
+        <Class IRI="#Закон"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетДатуПринятия"/>
+        <Class IRI="#Закон"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <ObjectUnionOf>
+            <Class IRI="#Гражданин"/>
+            <Class IRI="#Закон"/>
+            <Class IRI="#Статья"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетНазвание"/>
+        <Class IRI="#Закон"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетНомерЗакона"/>
+        <Class IRI="#Закон"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетНомерСтатьи"/>
+        <Class IRI="#Статья"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетТекстСтатьи"/>
+        <Class IRI="#Статья"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетФИО"/>
+        <Class IRI="#Гражданин"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетДатуПринятия"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетНазвание"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетНомерЗакона"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетНомерСтатьи"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетТекстСтатьи"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетФИО"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Гражданин</IRI>
+        <Literal>Физическое лицо, на которое распространяются нормы законов.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Гражданин</IRI>
+        <Literal>Гражданин</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Гражданин_001</IRI>
+        <Literal>Иванов И.И.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Закон</IRI>
+        <Literal>Нормативный акт, содержащий статьи.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Закон</IRI>
+        <Literal>Закон</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Закон_001</IRI>
+        <Literal>Закон 001-ФЗ</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Статья</IRI>
+        <Literal>Статья закона. Принадлежит ровно одному закону.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Статья</IRI>
+        <Literal>Статья</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Статья_001_1</IRI>
+        <Literal>Статья 1 (Закон 001-ФЗ)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Статья_001_2</IRI>
+        <Literal>Статья 2 (Закон 001-ФЗ)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетДатуПринятия</IRI>
+        <Literal>имеет дату принятия</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетИдентификатор</IRI>
+        <Literal>имеет идентификатор</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетНазвание</IRI>
+        <Literal>имеет название</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетНомерЗакона</IRI>
+        <Literal>имеет номер закона</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетНомерСтатьи</IRI>
+        <Literal>имеет номер статьи</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#имеетСтатью</IRI>
+        <Literal>Закон содержит статьи.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетСтатью</IRI>
+        <Literal>имеет статью</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетТекстСтатьи</IRI>
+        <Literal>имеет текст статьи</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетФИО</IRI>
+        <Literal>имеет ФИО</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#обязанСоблюдать</IRI>
+        <Literal>Гражданин обязан соблюдать конкретные статьи (нормы).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#обязанСоблюдать</IRI>
+        <Literal>обязан соблюдать</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#регулирует</IRI>
+        <Literal>Закон регулирует граждан (распространяется на них).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#регулирует</IRI>
+        <Literal>регулирует</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#регулируется</IRI>
+        <Literal>Гражданин регулируется законом.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#регулируется</IRI>
+        <Literal>регулируется</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#являетсяСтатьейЗакона</IRI>
+        <Literal>Статья относится к конкретному закону.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#являетсяСтатьейЗакона</IRI>
+        <Literal>является статьей закона</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

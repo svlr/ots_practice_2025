@@ -1,0 +1,1096 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/litres-selection-ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/litres-selection-ontology">
+    <Prefix name="" IRI="http://www.semanticweb.org/litres-selection-ontology#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>Онтология выбора книги для прочтения (в стиле Litres): книги, авторы, жанры, читатели, отзывы, рекомендации и предпочтения.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal>Litres: Выбор книги для прочтения</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>Версия 1.0</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Автор"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Жанр"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Книга"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Отзыв"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Рекомендация"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Формат"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Читатель"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#адресованаЧитателю"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#доступнаВФормате"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#жанрДляКниги"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#имеетЖанр"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#имеетОтзыв"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#написалКнигу"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#написанаАвтором"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#основанаНаЖанре"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#оставилОтзыв"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#оставленЧитателем"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#отзывОКниге"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#предпочитаетЖанр"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#предпочитаетФормат"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#прочитал"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#рекомендуемаяКнига"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#форматДляКниги"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#хочетПрочитать"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетГодИздания"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетИдентификатор"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетНазвание"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетОписание"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетОценку"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетРейтинг"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетСсылку"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетСтраниц"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетТекстОтзыва"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#имеетЦену"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Жанр_Фэнтези"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Формат_Ebook"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:gYear"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Отзыв_001"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Автор_Иванова"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Читатель_001"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Жанр_Научпоп"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Книга_МозгИБиты"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Рекомендация_001"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Формат_Аудио"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Автор_Петров"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Книга"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#имеетЖанр"/>
+            <Class IRI="#Жанр"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Книга"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#написанаАвтором"/>
+            <Class IRI="#Автор"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Рекомендация"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#адресованаЧитателю"/>
+            <Class IRI="#Читатель"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Рекомендация"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#рекомендуемаяКнига"/>
+            <Class IRI="#Книга"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Автор"/>
+        <NamedIndividual IRI="#Автор_Иванова"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Автор"/>
+        <NamedIndividual IRI="#Автор_Петров"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Жанр"/>
+        <NamedIndividual IRI="#Жанр_Научпоп"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Жанр"/>
+        <NamedIndividual IRI="#Жанр_Фэнтези"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Книга"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Книга"/>
+        <NamedIndividual IRI="#Книга_МозгИБиты"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Отзыв"/>
+        <NamedIndividual IRI="#Отзыв_001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Рекомендация"/>
+        <NamedIndividual IRI="#Рекомендация_001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Формат"/>
+        <NamedIndividual IRI="#Формат_Ebook"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Формат"/>
+        <NamedIndividual IRI="#Формат_Аудио"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Читатель"/>
+        <NamedIndividual IRI="#Читатель_001"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#доступнаВФормате"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+        <NamedIndividual IRI="#Формат_Ebook"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#доступнаВФормате"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+        <NamedIndividual IRI="#Формат_Аудио"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#имеетЖанр"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+        <NamedIndividual IRI="#Жанр_Фэнтези"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#имеетОтзыв"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+        <NamedIndividual IRI="#Отзыв_001"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#написанаАвтором"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+        <NamedIndividual IRI="#Автор_Петров"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#доступнаВФормате"/>
+        <NamedIndividual IRI="#Книга_МозгИБиты"/>
+        <NamedIndividual IRI="#Формат_Ebook"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#имеетЖанр"/>
+        <NamedIndividual IRI="#Книга_МозгИБиты"/>
+        <NamedIndividual IRI="#Жанр_Научпоп"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#написанаАвтором"/>
+        <NamedIndividual IRI="#Книга_МозгИБиты"/>
+        <NamedIndividual IRI="#Автор_Иванова"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#оставленЧитателем"/>
+        <NamedIndividual IRI="#Отзыв_001"/>
+        <NamedIndividual IRI="#Читатель_001"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#отзывОКниге"/>
+        <NamedIndividual IRI="#Отзыв_001"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#адресованаЧитателю"/>
+        <NamedIndividual IRI="#Рекомендация_001"/>
+        <NamedIndividual IRI="#Читатель_001"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#основанаНаЖанре"/>
+        <NamedIndividual IRI="#Рекомендация_001"/>
+        <NamedIndividual IRI="#Жанр_Фэнтези"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#рекомендуемаяКнига"/>
+        <NamedIndividual IRI="#Рекомендация_001"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#предпочитаетЖанр"/>
+        <NamedIndividual IRI="#Читатель_001"/>
+        <NamedIndividual IRI="#Жанр_Фэнтези"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#предпочитаетФормат"/>
+        <NamedIndividual IRI="#Читатель_001"/>
+        <NamedIndividual IRI="#Формат_Аудио"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#хочетПрочитать"/>
+        <NamedIndividual IRI="#Читатель_001"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Автор_Иванова"/>
+        <Literal>AUT-002</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетНазвание"/>
+        <NamedIndividual IRI="#Автор_Иванова"/>
+        <Literal>Иванова И.И.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Автор_Петров"/>
+        <Literal>AUT-001</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетНазвание"/>
+        <NamedIndividual IRI="#Автор_Петров"/>
+        <Literal>Петров П.П.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Жанр_Научпоп"/>
+        <Literal>GEN-002</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетНазвание"/>
+        <NamedIndividual IRI="#Жанр_Научпоп"/>
+        <Literal>Научпоп</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Жанр_Фэнтези"/>
+        <Literal>GEN-001</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетНазвание"/>
+        <NamedIndividual IRI="#Жанр_Фэнтези"/>
+        <Literal>Фэнтези</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетГодИздания"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">2022</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+        <Literal>BOOK-001</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетНазвание"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+        <Literal>Драконьи сны</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетОписание"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+        <Literal>Фэнтези-роман о выборе, ответственности и драконах, которые не обязаны быть милыми.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетРейтинг"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4.6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетСсылку"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">https://example.org/books/dragon-dreams</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетСтраниц"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">420</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетЦену"/>
+        <NamedIndividual IRI="#Книга_ДраконьиСны"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">299.00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетГодИздания"/>
+        <NamedIndividual IRI="#Книга_МозгИБиты"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">2021</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Книга_МозгИБиты"/>
+        <Literal>BOOK-002</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетНазвание"/>
+        <NamedIndividual IRI="#Книга_МозгИБиты"/>
+        <Literal>Мозг и биты: как мы учимся</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетОписание"/>
+        <NamedIndividual IRI="#Книга_МозгИБиты"/>
+        <Literal>Научпоп о навыках, памяти и том, почему мотивация не всегда спасает.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетРейтинг"/>
+        <NamedIndividual IRI="#Книга_МозгИБиты"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4.3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетСсылку"/>
+        <NamedIndividual IRI="#Книга_МозгИБиты"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">https://example.org/books/brain-and-bits</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетСтраниц"/>
+        <NamedIndividual IRI="#Книга_МозгИБиты"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">310</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетЦену"/>
+        <NamedIndividual IRI="#Книга_МозгИБиты"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">349.00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Отзыв_001"/>
+        <Literal>REV-001</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетОценку"/>
+        <NamedIndividual IRI="#Отзыв_001"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетТекстОтзыва"/>
+        <NamedIndividual IRI="#Отзыв_001"/>
+        <Literal>Сюжет бодрый, мир нормальный, драконы убедительны. Лучше многих.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Рекомендация_001"/>
+        <Literal>REC-001</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Формат_Ebook"/>
+        <Literal>FMT-EBK</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетНазвание"/>
+        <NamedIndividual IRI="#Формат_Ebook"/>
+        <Literal>Электронная книга</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Формат_Аудио"/>
+        <Literal>FMT-AUD</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетНазвание"/>
+        <NamedIndividual IRI="#Формат_Аудио"/>
+        <Literal>Аудиокнига</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <NamedIndividual IRI="#Читатель_001"/>
+        <Literal>USER-001</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#доступнаВФормате"/>
+        <ObjectProperty IRI="#форматДляКниги"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#жанрДляКниги"/>
+        <ObjectProperty IRI="#имеетЖанр"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#имеетОтзыв"/>
+        <ObjectProperty IRI="#отзывОКниге"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#написалКнигу"/>
+        <ObjectProperty IRI="#написанаАвтором"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#оставилОтзыв"/>
+        <ObjectProperty IRI="#оставленЧитателем"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#адресованаЧитателю"/>
+        <Class IRI="#Рекомендация"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#доступнаВФормате"/>
+        <Class IRI="#Книга"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#жанрДляКниги"/>
+        <Class IRI="#Жанр"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#имеетЖанр"/>
+        <Class IRI="#Книга"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#имеетОтзыв"/>
+        <Class IRI="#Книга"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#написалКнигу"/>
+        <Class IRI="#Автор"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#написанаАвтором"/>
+        <Class IRI="#Книга"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#основанаНаЖанре"/>
+        <Class IRI="#Рекомендация"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#оставилОтзыв"/>
+        <Class IRI="#Читатель"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#оставленЧитателем"/>
+        <Class IRI="#Отзыв"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#отзывОКниге"/>
+        <Class IRI="#Отзыв"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#предпочитаетЖанр"/>
+        <Class IRI="#Читатель"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#предпочитаетФормат"/>
+        <Class IRI="#Читатель"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#прочитал"/>
+        <Class IRI="#Читатель"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#рекомендуемаяКнига"/>
+        <Class IRI="#Рекомендация"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#форматДляКниги"/>
+        <Class IRI="#Формат"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#хочетПрочитать"/>
+        <Class IRI="#Читатель"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#адресованаЧитателю"/>
+        <Class IRI="#Читатель"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#доступнаВФормате"/>
+        <Class IRI="#Формат"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#жанрДляКниги"/>
+        <Class IRI="#Книга"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#имеетЖанр"/>
+        <Class IRI="#Жанр"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#имеетОтзыв"/>
+        <Class IRI="#Отзыв"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#написалКнигу"/>
+        <Class IRI="#Книга"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#написанаАвтором"/>
+        <Class IRI="#Автор"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#основанаНаЖанре"/>
+        <Class IRI="#Жанр"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#оставилОтзыв"/>
+        <Class IRI="#Отзыв"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#оставленЧитателем"/>
+        <Class IRI="#Читатель"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#отзывОКниге"/>
+        <Class IRI="#Книга"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#предпочитаетЖанр"/>
+        <Class IRI="#Жанр"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#предпочитаетФормат"/>
+        <Class IRI="#Формат"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#прочитал"/>
+        <Class IRI="#Книга"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#рекомендуемаяКнига"/>
+        <Class IRI="#Книга"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#форматДляКниги"/>
+        <Class IRI="#Книга"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#хочетПрочитать"/>
+        <Class IRI="#Книга"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетГодИздания"/>
+        <Class IRI="#Книга"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <ObjectUnionOf>
+            <Class IRI="#Автор"/>
+            <Class IRI="#Жанр"/>
+            <Class IRI="#Книга"/>
+            <Class IRI="#Отзыв"/>
+            <Class IRI="#Рекомендация"/>
+            <Class IRI="#Формат"/>
+            <Class IRI="#Читатель"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетНазвание"/>
+        <ObjectUnionOf>
+            <Class IRI="#Автор"/>
+            <Class IRI="#Жанр"/>
+            <Class IRI="#Книга"/>
+            <Class IRI="#Формат"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетОписание"/>
+        <Class IRI="#Книга"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетОценку"/>
+        <Class IRI="#Отзыв"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетРейтинг"/>
+        <Class IRI="#Книга"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетСсылку"/>
+        <Class IRI="#Книга"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетСтраниц"/>
+        <Class IRI="#Книга"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетТекстОтзыва"/>
+        <Class IRI="#Отзыв"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#имеетЦену"/>
+        <Class IRI="#Книга"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетГодИздания"/>
+        <Datatype abbreviatedIRI="xsd:gYear"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетИдентификатор"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетНазвание"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетОписание"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетОценку"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетРейтинг"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетСсылку"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетСтраниц"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетТекстОтзыва"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#имеетЦену"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Автор</IRI>
+        <Literal>Человек, написавший книгу.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Автор</IRI>
+        <Literal>Автор</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Автор_Иванова</IRI>
+        <Literal>Иванова И.И.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Автор_Петров</IRI>
+        <Literal>Петров П.П.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Жанр</IRI>
+        <Literal>Жанровая категория книги.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Жанр</IRI>
+        <Literal>Жанр</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Жанр_Научпоп</IRI>
+        <Literal>Научпоп</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Жанр_Фэнтези</IRI>
+        <Literal>Фэнтези</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Книга</IRI>
+        <Literal>Произведение, которое можно выбирать для чтения.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Книга</IRI>
+        <Literal>Книга</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Книга_ДраконьиСны</IRI>
+        <Literal>Драконьи сны</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Книга_МозгИБиты</IRI>
+        <Literal>Мозг и биты</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Отзыв</IRI>
+        <Literal>Текстовый отзыв читателя о книге.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Отзыв</IRI>
+        <Literal>Отзыв</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Отзыв_001</IRI>
+        <Literal>Отзыв 001</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Рекомендация</IRI>
+        <Literal>Рекомендация книги читателю (правило/подборка/совет).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Рекомендация</IRI>
+        <Literal>Рекомендация</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Рекомендация_001</IRI>
+        <Literal>Рекомендация 001</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Формат</IRI>
+        <Literal>Формат чтения: ebook, аудиокнига и т.п.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Формат</IRI>
+        <Literal>Формат</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Формат_Ebook</IRI>
+        <Literal>Ebook</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Формат_Аудио</IRI>
+        <Literal>Аудиокнига</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Читатель</IRI>
+        <Literal>Пользователь, выбирающий книгу для прочтения.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Читатель</IRI>
+        <Literal>Читатель</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Читатель_001</IRI>
+        <Literal>Читатель 001</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#адресованаЧитателю</IRI>
+        <Literal>Кому адресована рекомендация.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#адресованаЧитателю</IRI>
+        <Literal>адресована читателю</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#доступнаВФормате</IRI>
+        <Literal>Книга доступна в конкретном формате.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#доступнаВФормате</IRI>
+        <Literal>доступна в формате</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#жанрДляКниги</IRI>
+        <Literal>Жанр связывается с книгами, которые к нему относятся.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#жанрДляКниги</IRI>
+        <Literal>жанр для книги</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетГодИздания</IRI>
+        <Literal>имеет год издания</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#имеетЖанр</IRI>
+        <Literal>Книга относится к жанру.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетЖанр</IRI>
+        <Literal>имеет жанр</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетИдентификатор</IRI>
+        <Literal>имеет идентификатор</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетНазвание</IRI>
+        <Literal>имеет название</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетОписание</IRI>
+        <Literal>имеет описание</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#имеетОтзыв</IRI>
+        <Literal>К книге относится отзыв.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетОтзыв</IRI>
+        <Literal>имеет отзыв</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#имеетОценку</IRI>
+        <Literal>Оценка по шкале 1..5.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетОценку</IRI>
+        <Literal>имеет оценку</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#имеетРейтинг</IRI>
+        <Literal>Агрегированный рейтинг книги (например, средний).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетРейтинг</IRI>
+        <Literal>имеет рейтинг</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#имеетСсылку</IRI>
+        <Literal>Ссылка на страницу книги (например, в каталоге).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетСсылку</IRI>
+        <Literal>имеет ссылку</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетСтраниц</IRI>
+        <Literal>имеет страниц</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетТекстОтзыва</IRI>
+        <Literal>имеет текст отзыва</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#имеетЦену</IRI>
+        <Literal>имеет цену</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#написалКнигу</IRI>
+        <Literal>Автор написал книгу.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#написалКнигу</IRI>
+        <Literal>написал книгу</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#написанаАвтором</IRI>
+        <Literal>Книга написана конкретным автором.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#написанаАвтором</IRI>
+        <Literal>написана автором</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#основанаНаЖанре</IRI>
+        <Literal>Почему эта рекомендация появилась (жанровая логика).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#основанаНаЖанре</IRI>
+        <Literal>основана на жанре</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#оставилОтзыв</IRI>
+        <Literal>Читатель оставил отзыв.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#оставилОтзыв</IRI>
+        <Literal>оставил отзыв</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#оставленЧитателем</IRI>
+        <Literal>Кто оставил отзыв.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#оставленЧитателем</IRI>
+        <Literal>оставлен читателем</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#отзывОКниге</IRI>
+        <Literal>Отзыв относится к конкретной книге.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#отзывОКниге</IRI>
+        <Literal>отзыв о книге</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#предпочитаетЖанр</IRI>
+        <Literal>Жанровые предпочтения читателя.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#предпочитаетЖанр</IRI>
+        <Literal>предпочитает жанр</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#предпочитаетФормат</IRI>
+        <Literal>Предпочтительный формат чтения.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#предпочитаетФормат</IRI>
+        <Literal>предпочитает формат</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#прочитал</IRI>
+        <Literal>Читатель уже прочитал книгу.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#прочитал</IRI>
+        <Literal>прочитал</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#рекомендуемаяКнига</IRI>
+        <Literal>Какая книга рекомендуется.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#рекомендуемаяКнига</IRI>
+        <Literal>рекомендуемая книга</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#форматДляКниги</IRI>
+        <Literal>Формат связан с книгами, доступными в этом формате.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#форматДляКниги</IRI>
+        <Literal>формат для книги</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#хочетПрочитать</IRI>
+        <Literal>Книга в списке чтения читателя.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#хочетПрочитать</IRI>
+        <Literal>хочет прочитать</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
